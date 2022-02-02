@@ -1,14 +1,21 @@
-// Background main
-.index,
-.nosotros,
-.cursos,
-.semillas,
-.contacto {
-    background-image: url(../img/background.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 3rem;
+// Calculo de altura
+@mixin calculoAlturaMain($alturaDispositivo) {
+    min-height: calc(#{$alturaMain} - #{map-get($alturaDispositivo, header)} - #{map-get($alturaDispositivo, footer)});
+}
+
+.main {
+    @include calculoAlturaMain($alturaMobile);
+}
+
+// Background
+@each $seccion in $secciones {
+    .#{$seccion} {
+        background-image: url(../img/background.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 3rem;
+    }
 }
 
 // Index

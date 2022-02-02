@@ -1,4 +1,9 @@
 // Form general
+@mixin estiloTextoForm ($size, $weight) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
 .form {
     text-align: center;
 
@@ -11,21 +16,19 @@
     }
 
     .formLabel {
-        font-weight: bold;
-        font-size: 0.7rem;
+        @include estiloTextoForm(0.7rem, bold);
         text-align: left;
         width: 40%;
         margin: 0.5rem;
     }
 
     .formInput {
+        @include estiloTextoForm(0.7rem, bold);
         width: 45%;
         background-color: $fondoColorForm;
         border: none;
         border-bottom: solid 3px silver;
-        font-size: 0.7rem;
         font-family: 'Montserrat', sans-serif;
-        font-weight: bold;
         margin: 0.5rem;
 
         &:focus {
@@ -34,11 +37,10 @@
     }
 
     .formInputSubmit {
+        @include estiloTextoForm(0.8rem, bold);
         border-radius: 0.5rem;
         background-color: $fondoColor;
         margin: 0.2rem;
-        font-size: 0.8rem;
-        font-weight: bold;
         color: $colorTextoPrincipal;
         padding: 0.2rem;
         cursor: pointer;

@@ -1,6 +1,19 @@
 // Media queries
 // Vista tablet
 @media(min-width: 768px) {
+
+    // Alturas
+    @each $seccion,
+    $altura in $alturaTablet {
+        .#{$seccion} {
+            height: $altura;
+        }
+    }
+
+    .main {
+        @include calculoAlturaMain($alturaTablet);
+    }
+
     // Index
     .index {
         .tienda {
@@ -13,6 +26,7 @@
 
     .nosotros,
     .cursos {
+
         // Tamaño videos
         .video {
             width: 450px;
@@ -31,6 +45,7 @@
     // Footer
     .footer {
         flex-direction: row;
+
         .containerFormFooter {
             width: 50%;
         }
@@ -40,6 +55,19 @@
 
 // Vista escritorio
 @media(min-width: 1024px) {
+
+    // Alturas
+    @each $seccion,
+    $altura in $alturaEscritorio {
+        .#{$seccion} {
+            height: $altura;
+        }
+    }
+
+    .main {
+        @include calculoAlturaMain($alturaEscritorio);
+    }
+
     // Párrafos
     p {
         font-size: 1rem;
